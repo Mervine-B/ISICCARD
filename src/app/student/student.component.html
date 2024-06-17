@@ -1,0 +1,51 @@
+<div class="details">
+    <div class="d-flex justify-content-between  ">
+      <h2 class="name">List des Etudiants</h2>
+      <div class="px-3">
+    <button class="text-light bg-config btn btn-sm "  style="margin-right: 10px;" type="button" (click)="openDialog()" >Ajouter <i class="fas fa-thin fa-user-plus"></i></button>
+    <button class="text-light bouton btn btn-sm" type="button" (click)="onRefresh()" >Rafraîchir <i class="fas fa-duotone fa-arrows-rotate"></i></button>   
+   <button class="text-light bg-danger btn btn-sm" [disabled]="!canDelete" (click)="deleteSelectedStudents()">Supprimer <i class="fas fa-trash"></i></button>
+      </div>
+    </div>
+    
+      <div class="List">
+          <div>  
+              <table class="table hover table-responsive" >
+                  <thead>
+                    <tr>
+                      <th scope="col" (change)="toggleAllStudents($event)" ></th>
+                      <th scope="col" >Nom de l'école</th>
+                      <th scope="col" >Nom de l'etudiant</th>
+                      <th scope="col" >Prenom</th>
+                      <th scope="col" >Email</th>
+                      <th scope="col" >Date de Naissance</th>
+                      <th scope="col" >Type de Carte</th>
+                      <th scope="col" ></th>
+
+                    </tr>
+                  </thead>
+                  <tbody >
+                      <tr *ngFor="let student of students">
+                        <td><input type="checkbox"  [(ngModel)]="student.selected"   /></td>
+                          <td>{{ student.nameOfSchool}}</td>
+                          <td>{{ student.name }}</td>
+                          <td>{{ student.firstName }}</td>
+                          <td>{{ student.email }}</td>
+                          <td>{{ student.dateOfBirth | date }}</td>
+                          <td>{{ student.typeofcardName }}</td>
+                         <td>
+                            <button class="btn btn-sm " (click)="openDialog(student)" >
+                              <i class="fas fa-edit edit"></i>
+                            </button>
+              
+                        </td>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+        
+      </div>
+  
+  
+  
+  </div>

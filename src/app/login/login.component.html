@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <div class="connect">
+    <form action=""  [formGroup]="loginForm" >
+      <h1>Connexion</h1>
+    <div class="input-box">
+      <div class="input-field">
+      <input type="email"  placeholder="Username" formControlName="username"  >
+     <i class="fas fa-user"></i>
+      </div>            
+    <div class="input-field">
+      <input type="password"  placeholder="Password" formControlName="password" >
+      <i class="fas fa-lock"></i>
+     </div>
+  
+        <button class="btn btn-btn sm" (click)="Submit()">login</button>
+       <div class="register-link">
+        <p>don't have an account? <a href="#">Register</a></p>
+       </div>
+         
+        </div>
+  </form>
+  </div>
+  
+</div>

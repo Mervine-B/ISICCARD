@@ -1,0 +1,41 @@
+<div class="details">
+  <div class="d-flex justify-content-between  ">
+    <h2 class="name">Liste des Agents</h2>
+    <div class="">
+  <button class="text-light bg-config btn btn-sm px-3 " style="margin-right: 10px;" type="button" (click)="openDialog()" >Ajouter <i class="fas fa-thin fa-user-plus"></i></button>
+  <button class="text-light bouton btn btn-sm " type="button" (click)="onRefresh()">Rafraîchir <i class="fas fa-duotone fa-arrows-rotate"></i></button>
+  <button class="text-light bg-danger btn btn-sm" [disabled]="!canDelete" (click)="deleteSelectedAgents()">Supprimer <i class="fas fa-trash"></i></button>
+    </div>
+  </div>
+  
+    <div class="List">
+       <div>
+            <table class="table hover table-responsive" >
+                <thead>
+                  <tr>
+                    <th scope="col" (change)="toggleAllStudents($event)" ></th>
+                    <th scope="col" >Nom</th>
+                    <th scope="col" >Prenom</th>
+                    <th scope="col" >Contact</th>
+                    <th scope="col" ></th>
+                   
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let agent of agents">
+                      <td><input type="checkbox"  [(ngModel)]="agent.selected"  /></td>
+                        <td>{{ agent.name }}</td>
+                        <td>{{ agent.firstName }}</td>
+                        <td>{{ agent.contact }}</td>
+                        <td>
+                          <button type="button" class="btn btn-sm" (click)="openDialog(agent)" >
+                            <i class="fas fa-edit edit"></i>
+                          </button>
+                          
+                      </td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+</div>

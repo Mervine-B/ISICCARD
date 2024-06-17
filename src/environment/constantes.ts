@@ -1,0 +1,1 @@
+export const apibase = "https:/localhost:44382"

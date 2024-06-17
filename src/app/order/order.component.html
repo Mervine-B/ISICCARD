@@ -1,0 +1,33 @@
+<div class="details">
+ <h2 class="name">Liste des commandes </h2>
+  <div class="List">
+  
+    <form [formGroup]="orderForm">  
+        <table class="table table-responsive">
+            <thead>
+              <tr>
+                <th scope="col" >Numero de commande</th>
+                <th scope="col" >Nom</th>
+                <th scope="col" >Nom de l'Etudiant</th>
+                <th scope="col" >Type de carte</th>
+                <th scope="col" >Date de soumission</th>
+                <th scope="col" >Date de validation</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orders">
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.name }}</td>
+                    <td>{{ order.studentName }}</td>
+                    <td>{{ order.cardName }}</td>
+                    <td>{{ order.submissionDate | date }}</td>
+                    <td>{{ order.validationDate | date  }}</td>
+                </tr>
+            </tbody>
+          </table>
+    </form>
+  
+
+  </div>
+
+</div>

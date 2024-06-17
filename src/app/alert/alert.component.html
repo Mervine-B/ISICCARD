@@ -1,0 +1,12 @@
+<mat-card>
+    <h2 mat-dialog-title>{{ title }}</h2>
+    <mat-dialog-content>
+    <p>{{ content }}</p>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+    <button class="btn btn-sm" [mat-dialog-close]="true" color="warn" (click)="dialogRef.close(false)">Annuler</button>
+    <button class="btn btn-sm" (click)="dialogRef.close(true)">Confirmer</button>
+    </mat-dialog-actions>
+</mat-card>
+
+

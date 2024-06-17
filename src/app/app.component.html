@@ -1,0 +1,10 @@
+
+<app-login *ngIf="!isLogin "></app-login>
+
+
+
+<app-dashboard *ngIf="isLogin">
+<div class="mt-5 container gap-2">
+    <router-outlet></router-outlet>
+</div>
+</app-dashboard>

@@ -1,0 +1,71 @@
+<div class="container-fluid px-0">
+    <div class="d-flex justify-content-end bg-success p-1 shadow">
+        <div> <i class="fas fa-window-close text-white fa-2x pointer" (click)="Cancel()"></i> </div>
+    </div>
+    <div class="">
+        <mat-dialog-content class="">
+            <h2 class="mb-0">{{ data && data.id ? 'Éditer un agent' : 'Ajouter un agent' }}</h2>
+            <div class="">
+                <form [formGroup]="formulaireForm" class="mt-0">
+                    <div class="row">
+                        <div class="col-md-6"> 
+                            <label for="id1" class="form-label">Nom(s)</label>
+                            <input 
+                                type="text" 
+                                class="form-control form-control-sm"
+                                formControlName="name" 
+                                id="id1"
+                                [ngClass]="{
+                                    'is-valid': formulaireForm.controls['name'].valid,
+                                    'is-invalid': formulaireForm.controls['name'].invalid,
+                                }"
+                            >
+                            <div class="valid-feedback">
+                                <!-- Ajouter du contenu ici si nécessaire -->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="id2" class="form-label" >Prenom(s)</label>
+                            <input 
+                                type="text" 
+                                class="form-control form-control-sm" 
+                                formControlName="firstName" 
+                                id="id2"
+                                [ngClass]="{
+                                    'is-valid': formulaireForm.controls['firstName'].valid,
+                                    'is-invalid': formulaireForm.controls['firstName'].invalid,
+                                }"    
+                            >
+                            <div class="valid-feedback">
+                                <!-- Ajouter du contenu ici si nécessaire -->
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="id3" class="form-label" >Contact</label>
+                            <input 
+                                type="text" 
+                                class="form-control form-control-sm"
+                                formControlName="contact" id="id3"
+                                [ngClass]="{
+                                    'is-valid': formulaireForm.controls['contact'].valid,
+                                    'is-invalid': formulaireForm.controls['contact'].invalid,
+                                }"
+                            >
+                            <div class="valid-feedback">
+                                <!-- Ajouter du contenu ici si nécessaire -->
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="d-flex justify-content-end mt-2">
+                <button 
+                    class="btn btn-success btn-sm"  
+                    type="button" 
+                    [disabled]="formulaireForm.invalid"
+                    (click)="Submit()">Confirmer <i class="fas fa-save"> </i> </button>
+            </div>
+        </mat-dialog-content>
+    </div>
+</div>
+

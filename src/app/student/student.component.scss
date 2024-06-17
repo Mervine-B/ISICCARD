@@ -1,0 +1,57 @@
+.details {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(240, 202, 202, 0.08);
+ 
+    border-radius: 20px;
+  }
+  .List table{
+    width:  100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+   .details .List table tr {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+  .details .List  table tbody tr:hover {
+    background: #40b8b8;
+    color: white;
+  }
+
+  .hover  tr:hover{
+    & > td{
+      background: #40b8b8;
+      color: white;
+    }
+  }
+  
+  
+  
+  .name{
+    font-weight: 600;
+    color: #40b8b8;
+  }
+  
+  .bg-config{
+    background-color: #F0BF2E ;
+  }
+  
+  .bouton{
+    background-color:#40b8b8;
+  }
+  
+  .edit{
+    color: #F0BF2E;
+  }
+  
+  .trash{
+    color: red;
+  }
