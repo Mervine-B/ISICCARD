@@ -42,11 +42,11 @@ export class StudentService {
         Authorization : "Bearer " + resp.token
 
       })
-    const url = apibase +"/api/Client"
+    const url = apibase +"/api/Student"
     return this.http.post<StudentModel>(url, data, {headers: header}) 
   }
 
-  const url = apibase +"/api/Client"
+  const url = apibase +"/api/Student"
     return this.http.post<StudentModel>(url , data)
 }
 
@@ -61,10 +61,10 @@ studentUpdate(student : StudentModel){
 
     })
 
-  const url = apibase + "/api/Client"
+  const url = apibase + "/api/Student"
   return this.http.put<StudentModel>(url, student, {headers: header}) 
 }
-const url = apibase + "/api/Client"
+const url = apibase + "/api/Student"
 return this.http.put<StudentModel>(url, student)
 }
 

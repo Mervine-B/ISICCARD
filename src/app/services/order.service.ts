@@ -32,5 +32,24 @@ export class OrderService {
         const url = apibase + "/api/Order"
         return this.http.get<Ordermodel[]>(url)
     }
+
+    orderUpdate(order : Ordermodel){
+      const obj = this.globalService.getItem('agentlogin')
+      console.log(obj)
+      if (obj){
+    
+        const resp: ResponseLogin = JSON.parse(obj)
+        const header: HttpHeaders = new HttpHeaders({
+          Authorization : "Bearer " + resp.token
+    
+        })
+    
+      const url = apibase + "/api/Order"
+      return this.http.put<Ordermodel>(url, order, {headers: header}) 
+    }
+    const url = apibase + "/api/Order"
+    return this.http.put<Ordermodel>(url, order)
+    }
+  
 }
 

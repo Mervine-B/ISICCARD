@@ -89,7 +89,7 @@ Submit(){
       (error) => {
         console.log(error);
         this.openSnackBar('Erreur lors de la mise à jour de l\'agent', 'OK');
-        this.dialogRef.close(); // Fermez la boîte de dialogue même en cas d'erreur
+        this.dialogRef.close(); 
       }
     );
   } else {

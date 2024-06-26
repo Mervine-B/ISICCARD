@@ -1,24 +1,26 @@
 <div class="wrapper">
-  <div class="connect">
-    <form action=""  [formGroup]="loginForm" >
-      <h1>Connexion</h1>
-    <div class="input-box">
-      <div class="input-field">
-      <input type="email"  placeholder="Username" formControlName="username"  >
-     <i class="fas fa-user"></i>
-      </div>            
-    <div class="input-field">
-      <input type="password"  placeholder="Password" formControlName="password" >
-      <i class="fas fa-lock"></i>
-     </div>
-  
-        <button class="btn btn-btn sm" (click)="Submit()">login</button>
-       <div class="register-link">
-        <p>don't have an account? <a href="#">Register</a></p>
+  <div class="container-fluid px-0 bg-light h-100">
+     <div class="container">
+        <div class="info">
+          <h1>Connexion</h1>
+         </div>
+         </div>
+        <div class="form card" >
+          <img src="assets/xavatario (1).svg" class="image" alt="">
+         <form class="register-form">
+         <input type="text" placeholder="name"/>
+         <input type="password" placeholder="password"/>
+         <input type="text" placeholder="email address"/>
+         <button>create</button>
+         <p class="message">Already registered? <a href="#">Sign In</a></p>
+        </form>
+        <form class="login-form" [formGroup]="loginForm">
+        <input type="text" formControlName="username" placeholder="nom d'utilisateur"/>
+        <input type="password" formControlName="password" placeholder="mot de passe"/>
+        <button (click)="Submit()">Se connecter</button>
+        <p class="message">Not registered? <a href="#">Create an account</a></p>
+         </form>
        </div>
-         
         </div>
-  </form>
-  </div>
   
 </div>

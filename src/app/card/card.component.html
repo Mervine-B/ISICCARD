@@ -1,0 +1,37 @@
+<div class="details">
+    <div class="d-flex justify-content-between  ">
+      <h2 class="name">Ajouter un type de carte</h2>
+      <div class="">
+    <button class="text-light bg-config btn btn-sm px-3 " style="margin-right: 10px;" type="button" (click)="openDialog()" >Ajouter <i class="fas fa-thin fa-user-plus"></i></button>
+    <button class="text-light bg-danger btn btn-sm" [disabled]="!canDelete" (click)="deleteSelectedCards()">Supprimer <i class="fas fa-trash"></i></button>
+      </div>
+    </div>
+    
+      <div class="List">
+         <div>
+              <table class="table hover table-responsive" >
+                  <thead class="table-secondary">
+                    <tr>
+                      <th scope="col" (change)="toggleAllStudents($event)" ><input type="checkbox"/></th>
+                      <th scope="col" >Nom</th>
+                      <th scope="col" >Code</th>
+                      <th scope="col" ></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let card of cards">
+                        <td><input type="checkbox"  [(ngModel)]="card.selected"  /></td>
+                          <td>{{ card.name }}</td>
+                          <td>{{ card.code }}</td>
+                          <td>
+                            <button type="button" class="btn btn-sm" (click)="openDialog(card)" >
+                              <i class="fas fa-edit edit"></i>
+                            </button>
+                            
+                        </td>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+  </div>

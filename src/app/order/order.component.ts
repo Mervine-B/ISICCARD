@@ -5,13 +5,18 @@ import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Ordermodel } from '../models/order.model';
 
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { FormulaireComponent } from '../formulaire/formulaire.component';
+import { DialogorderComponent } from '../dialogorder/dialogorder.component';
+
 @Component({
   selector: 'app-order',
   standalone: true,
   imports: [ ReactiveFormsModule,
     CommonModule,
-    HttpClientModule
-
+    HttpClientModule,
+   
+    MatDialogModule
   ],
   templateUrl: './order.component.html',
   styleUrl: './order.component.scss',
@@ -24,7 +29,8 @@ export class OrderComponent {
 
   constructor(
     private orderService : OrderService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private dialog: MatDialog,
 
   ){}
 
@@ -33,9 +39,10 @@ export class OrderComponent {
       id: [null],
       name: [null],
       studentId: [null],
-    typeOfCardId : [null],
-    validationDate : [null],
-    submissionDate : [null]
+      typeOfCardId : [null],
+      validationDate : [null],
+      submissionDate : [null],
+      statusId:[null]
 
     });
 
@@ -48,5 +55,30 @@ export class OrderComponent {
       this.orders = orders
     })
   }
+  openOrderDialog(order: Ordermodel): void {
+    console.log("boite de dialog",order)
+    const dialogRef = this.dialog.open(DialogorderComponent, {
+      width: '500px', 
+      data: order ,
+      disableClose: true
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('La boîte de dialogue est fermée');
+      
+    });
+  }
+
+  onRefresh(){
+    this.orderService.orderGet().subscribe(
+      (data) =>{
+        this.orders = data;
+      }
+    )
+
+    }
 }
+  
+  
+ 
+
 

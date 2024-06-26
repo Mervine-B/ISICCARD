@@ -1,18 +1,19 @@
 .details {
     position: relative;
-    width: 100%;
+    width: 50%;
     padding: 20px;
     display: grid;
     background: white;
     padding: 20px;
     box-shadow: 0 7px 25px rgba(240, 202, 202, 0.08);
-    box-shadow: 0 7px 25px rgba(240, 202, 202, 0.08);
+ 
     border-radius: 20px;
   }
   .List table{
     width:  100%;
     border-collapse: collapse;
     margin-top: 10px;
+    background: #fff;
   }
   
    .details .List table tr {
@@ -21,18 +22,18 @@
     font-weight: 400;
   }
   
-  .details .List table tbody tr:hover {
+  .details .List  table tbody tr:hover {
     background: #40b8b8;
     color: white;
   }
-  
+
   .hover  tr:hover{
     & > td{
       background: #40b8b8;
       color: white;
-      cursor: pointer;
     }
   }
+  
   
   
   .name{
@@ -41,6 +42,18 @@
     color: #999;
   }
   
+  .bg-config{
+    background-color: #F0BF2E ;
+  }
+  
   .bouton{
     background-color:#40b8b8;
+  }
+  
+  .edit{
+    color: #F0BF2E;
+  }
+  
+  .trash{
+    color: red;
   }

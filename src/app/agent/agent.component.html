@@ -1,6 +1,6 @@
 <div class="details">
   <div class="d-flex justify-content-between  ">
-    <h2 class="name">Liste des Agents</h2>
+    <h2 class="name">Liste des agents</h2>
     <div class="">
   <button class="text-light bg-config btn btn-sm px-3 " style="margin-right: 10px;" type="button" (click)="openDialog()" >Ajouter <i class="fas fa-thin fa-user-plus"></i></button>
   <button class="text-light bouton btn btn-sm " type="button" (click)="onRefresh()">Rafraîchir <i class="fas fa-duotone fa-arrows-rotate"></i></button>
@@ -11,9 +11,9 @@
     <div class="List">
        <div>
             <table class="table hover table-responsive" >
-                <thead>
+                <thead class="table-secondary ">
                   <tr>
-                    <th scope="col" (change)="toggleAllStudents($event)" ></th>
+                    <th scope="col" (change)="toggleAllStudents($event)" ><input class="checkbox" type="checkbox"/></th>
                     <th scope="col" >Nom</th>
                     <th scope="col" >Prenom</th>
                     <th scope="col" >Contact</th>
@@ -23,7 +23,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let agent of agents">
-                      <td><input type="checkbox"  [(ngModel)]="agent.selected"  /></td>
+                      <td><input class="checkbox" type="checkbox"  [(ngModel)]="agent.selected"  /></td>
                         <td>{{ agent.name }}</td>
                         <td>{{ agent.firstName }}</td>
                         <td>{{ agent.contact }}</td>

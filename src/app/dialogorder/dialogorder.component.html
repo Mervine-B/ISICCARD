@@ -1,0 +1,99 @@
+
+<div class="d-flex justify-content-end bg-success p-1 shadow">
+    <div> <i class="fas fa-window-close text-white fa-2x pointer" (click)="Cancel()"></i> </div>
+</div>
+<mat-dialog-content class="">
+    <h2 class="mb-0 text "> Details de la commande</h2>
+     <div class="">
+          <div class="">
+            <form [formGroup]="orderForm" class="mt-0">
+                    <div class=" row">
+                      <div class=" label row">
+                        <div class=" col-md-6">
+                          <h4 >Id: {{data.id}}</h4>
+                          </div>
+                         <div class="color col-md-6 px-3">
+                         <h4 >Status: {{data.statusName}}</h4>
+                       </div>
+                      </div>
+                    <div class="col-md-6 "> 
+                        <label for="id1" class="form-label">Nom de l'etudiant</label>
+                        <select 
+                            type="text" 
+                            class="form-control form-control-sm"
+                            id="id1"
+                            aria-readonly="true"
+                            formControlName="studentId" 
+                            [ngClass]="{
+                                'is-valid': orderForm.controls['studentId'].valid,
+                                'is-invalid': orderForm.controls['studentId'].invalid,
+                            }"
+                        >
+                        <option *ngFor="let student of students" [value]="student.id">{{student.name}}</option>  
+                    </select>
+                        <div class="valid-feedback">
+                            <!-- Ajouter du contenu ici si nécessaire -->
+                        </div>
+                    </div>
+                    <div class="col-md-6 ">
+                        <label for="id2" class="form-label" >Type de carte</label>
+                        <select 
+                            class="form-control form-control-sm" 
+                            id="id2"
+                            formControlName="typeOfCardId"
+                            [ngClass]="{
+                                'is-valid': orderForm.controls['typeOfCardId'].valid,
+                                'is-invalid': orderForm.controls['typeOfCardId'].invalid,
+                            }">
+                            <option *ngFor="let type of typeofcards" [value]="type.id">{{type.name}}</option>  
+                        </select>
+                        <div class="valid-feedback">
+                            <!-- Ajouter du contenu ici si nécessaire -->
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="id3" class="form-label" >Date de soumission</label>
+                        <input 
+                             type="date"
+                             class="form-control form-control-sm"
+                             formControlName="submissionDate" 
+                             id="id3"
+                            readonly
+                             [ngClass]="{
+                                'is-valid': orderForm.controls['submissionDate'].valid,
+                                'is-invalid': orderForm.controls['submissionDate'].invalid,
+                            }"
+                        >
+                        <div class="valid-feedback">
+                            <!-- Ajouter du contenu ici si nécessaire -->
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="id3" class="form-label" >Date de validation</label>
+                        <input 
+                             type="date"
+                             class="form-control form-control-sm"
+                             formControlName="validationDate" 
+                             id="id3"
+                            readonly
+                             [ngClass]="{
+                                'is-valid': orderForm.controls['validationDate'].valid,
+                                'is-invalid': orderForm.controls['validationDate'].invalid,
+                            }"
+                        >
+                        <div class="valid-feedback">
+                            <!-- Ajouter du contenu ici si nécessaire -->
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="bouton">
+          <button class="text-light btn-success btn btn-sm px-3  " style="margin-right: 10px;" type="button" (click)="Validate()" >Valider <i class="fas fa-solid fa-check"></i></button>
+          <button class="text-light bg-danger btn btn-sm px-3 " style="margin-right: 10px;" type="button"  >Rejeter <i class="fas fa-sharp fa-regular fa-xmark"></i></button>
+        
+            </div>
+    </div>
+</mat-dialog-content>
+
+

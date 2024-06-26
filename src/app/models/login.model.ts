@@ -7,5 +7,5 @@ export class ResponseLogin {
     message!: string
     username!: string
     token!: string 
-    fullName!: string
+    name!: string
 }

@@ -6,8 +6,10 @@ export class Ordermodel{
     typeOfCardId!: number
     validationDate!: Date
     submissionDate!:Date
-
+    statusId!:number
+   
     // join 
     studentName!: string
     cardName!: string
+    statusName!:string 
 }

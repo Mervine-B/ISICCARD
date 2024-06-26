@@ -81,9 +81,6 @@ export class StudentformComponent {
   }
 
 
-
-
-
   loadtypeofcards() {
     // Supposons que vous ayez un service qui obtient les types de cartes
     this.typeofcardService.typeofcardGet().subscribe((typeofcard: typeofcardModel[]) => {

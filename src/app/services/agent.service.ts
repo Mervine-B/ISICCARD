@@ -82,7 +82,7 @@ agentDelete(idAgent: number){
 
     })
   
-  const url = apibase + "/api/Agent?id=" + idAgent
+  const url = apibase + "/api/Agent?id" + idAgent
   return this.http.delete<FormulaireModel>(url,{headers: header}) 
 }
 const url = apibase + "/api/Agent"
